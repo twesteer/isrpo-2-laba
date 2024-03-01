@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Подсчет количества пробелов в предложении. Блок 1 задание 13";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post" asp-action="CountSpaces">
+    <label for="sentence">Введите предложение:</label>
+    <div class="input-group">
+        <span class="input-group-text">Минимум 1 слово</span>
+        <input name="sentence" id="sentence" required class="form-control"></input>
+    </div>
+    <button type="submit" class="btn btn-warning" style="margin-top: 10px">Посчитать пробелы</button>
+</form>
+
+@if (ViewData["SpaceCount"] != null)
+{
+    <p style="margin-top: 10px">Количество пробелов в предложении: @ViewData["SpaceCount"]</p>
+}

@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Arithmetic Progression";
+}
+
+<h1>Блок 2. Задание 2</h1>
+
+<form method="post" action="Calculate">
+    <div class="input-group">
+        <span class="input-group-text">Введите целое число N (&gt; 0):</span>
+        <input type="number" name="N" required name="sentence" id="sentence" required class="form-control"></input>
+    </div>
+    <button type="submit" class="btn btn-warning" style="margin-top: 10px">Рассчитать</button>
+</form>
+
+@if (ViewBag.Result != null)
+{
+    <p>Значение выражения: @ViewBag.Result</p>
+}

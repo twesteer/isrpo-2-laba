@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "TaskThird";
+}
+
+<h2>Проверка слова. Блок 3 Задание 13</h2>
+
+@using (Html.BeginForm("CheckWord", "Home", FormMethod.Post))
+{
+    <div class="input-group mb-3">
+        <span class="input-group-text">Введите слово:</span>
+        <input type="text" name="inputWord" required class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-warning" >Проверить</button>
+}
+
+@if (ViewBag.IsSameLetter != null)
+{
+    <div class="mt-3">
+        @if (ViewBag.IsSameLetter)
+        {
+            <p>Слово'@ViewBag.InputWord' начинается и заканчивается на одну и ту же букву</p>
+        }
+        else
+        {
+            <p>Слово'@ViewBag.InputWord' начинается и заканчивается <a style="color: red">не</a> на одну и ту же букву.</p>
+        }
+    </div>
+}
